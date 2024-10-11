@@ -1,11 +1,11 @@
-FROM oven/bun:1
+FROM golang:1.23
 
-WORKDIR /usr/src/app
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
 
-COPY package.json bun.lockb ./
+COPY *.go ./
 
-RUN bun install
+RUN CGO_ENABLED=0 GOOS=linux go build -o /sendemail
 
-COPY . .
-
-CMD bun run index.ts
+CMD ["/sendemail"]
