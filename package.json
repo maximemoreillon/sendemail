@@ -1,0 +1,16 @@
+{
+  "name": "sendemail",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.16",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.15"
+  },
+  "bin": "index.ts"
+}
